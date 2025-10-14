@@ -1,0 +1,17 @@
+.nav-container{
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+.a-nav{
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo{
+    width: 7rem;
+}
