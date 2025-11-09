@@ -1,18 +1,25 @@
-import NavbarBS from "./components/NavbarBS"
-import ItemListContainer from "./components/ItemListContainer"
-import ItemCount from "./components/ItemCount"
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from "./components/ItemListContainer";
+import NavbarBS from "./components/NavbarBS";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Error from './components/Error';
+
+
 
 function App() {
 
-
   return (
-    <>
+    <BrowserRouter>
       <NavbarBS/>
-      <ItemListContainer saludo='Bienvenido a Big Burger'/>
-      <ItemCount/>
-    </>
+      <Routes>
+        <Route path='/' element={<ItemListContainer saludo='Bienvenido a Big Burger'/>}/>
+          <Route path='/category/:type' element={<ItemListContainer saludo='Bienvenido a la categoria: '/>}/>
+        <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+        <Route path='*' element={<Error/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

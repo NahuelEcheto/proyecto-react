@@ -1,7 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { Badge } from 'react-bootstrap'
 
-const CartWidget = ()=>{
+const CartWidgetRI = ()=>{
     return(
         <>
         <FaShoppingCart fontSize={'1.3rem'}/>
@@ -9,4 +9,4 @@ const CartWidget = ()=>{
         </>
     )
 }
-export default CartWidget
+export default CartWidgetRI

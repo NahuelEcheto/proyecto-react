@@ -3,29 +3,30 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidgetRI from './CartWidgetRI';
+import {NavLink} from 'react-router-dom'
 
 function NavbarBS() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home"><img src="../logo-hamburguesa.png" alt="logo" style={{width:'7rem'}} /></Navbar.Brand>
+        <Navbar.Brand as={NavLink} to='/'>
+            <img src='../logo-hamburguesa.png' alt='logo' style={{width:'7rem'}}/>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <Nav.Link as={NavLink} to='/'>Inicio</Nav.Link>
+            <NavDropdown title="Productos" id="basic-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="/category/nuevos">Nuevos</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item as={NavLink} to="/category/mas vendidos">
+                Más Vendidos
               </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to="/category/ofertas" >Ofertas</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <CartWidgetRI />
+          <CartWidgetRI/>
         </Navbar.Collapse>
       </Container>
     </Navbar>
