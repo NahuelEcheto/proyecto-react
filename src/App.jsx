@@ -15,7 +15,7 @@ function App() {
       <NavbarBS/>
       <Routes>
         <Route path='/' element={<ItemListContainer saludo='Bienvenido a Big Burger'/>}/>
-          <Route path='/category/:type' element={<ItemListContainer saludo='Bienvenido a la categoria: '/>}/>
+        <Route path='/category/:type' element={<ItemListContainer saludo='Bienvenido a la categoria: '/>}/>
         <Route path='/item/:id' element={<ItemDetailContainer/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>
